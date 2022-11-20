@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>User form to enter new user</title>
+</head>
+<body>
+<p>User form to enter new user</p>
+<div layout:fragment="content">
+    <div layout:fragment="form">
+    <form action="#" th:action="@{/saveUser}" th:object="${user}" method="post">
+        <div class="form-group">
+            <p><input type="text" th:field="*{name}" name="name" class="form-control" placeholder="Name" /></p>
+        </div>
+        <div class="form-group">
+            <p><input type="text" th:field="*{job}" name="job" class="form-control" placeholder="Job" /></p>
+        </div>
+        <p><input type="submit" value="Submit" class="btn btn-primary" /> <input type="reset" value="Reset"class=" btn btn-primary" /></p>
+    </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>User form to enter new user</title>
+</head>
+<body>
+  <div layout:fragment="content">
+    <!--<p th:each="univeristy : ${universities}"
+       th:text="${univeristy.name}">A Smoke Test</p> This works but must be used as a shortcut-->
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Web</th>
+        <th scope="col">Domain</th>
+        <th scope="col">Alpha Code</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="univeristy : ${universities}">
+        <td th:text="${univeristy.name}"></td>
+        <td th:each="page : ${univeristy.web_pages}">
+          <p th:text="${page}"></p>
+        </td>
+        <td th:each="domain : ${univeristy.domains}">
+          <p th:text="${domain}"></p>
+        </td>
+        <td th:text="${univeristy.alpha_two_code}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
